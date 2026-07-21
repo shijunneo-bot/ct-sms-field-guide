@@ -1,50 +1,30 @@
-# The SMS Field Guide
+# The SMS & RCS Field Guide
 
-An interactive pattern library for the CleverTap SMS add-on. 75 use cases across 12 APAC verticals, each with a sample message, the trigger that makes it relevant, the market's deliverability rules, and how to build it in CleverTap.
+A public pattern library for CleverTap messaging: **75 SMS** and **120 RCS** campaign use cases across **15 APAC verticals**. Each card gives the message, the trigger that makes it land, per-market compliance and RCS availability, and how to build it in CleverTap.
 
-**Live site:** https://shijunneo-bot.github.io/ct-sms-field-guide/
-
----
-
-## What it is
-
-A single-page reference for teams deciding what to send over SMS and how to ship it. It is organised around the jobs SMS is genuinely good at, not a dump of templates. Every card pairs the message with the signal that makes it land and whether it will deliver in a given market, so you can move from a pattern to a live campaign without guessing.
+**Live:** https://shijunneo-bot.github.io/ct-sms-field-guide/
 
 ## What's inside
+- **Two channels, one tool.** Switch between an **SMS** tab (75 patterns, 12 verticals) and an **RCS** tab (120 patterns, 15 verticals) at the top.
+- **SMS vs WhatsApp vs RCS comparison** so you can pick the right channel in a call.
+- **RCS feature guide** covering the three CleverTap template types (Text, Rich Card, Carousel), the three button types, limits and common misreads.
+- **RCS availability across APAC (2026)** with an honest live vs not-yet market split and an SMS-fallback flag on every card.
+- **Real CleverTap case studies** cited per vertical (Bandhan AMC anchors the RCS story with an 8-10% conversion uplift and 75% cost cut).
+- **Filter and search:** by vertical, template type, job and pattern, grouped flat, by vertical, or by template. Click any card for the full brief and a mockup.
 
-- **75 use-case cards** across 12 APAC verticals, colour-coded by vertical.
-- **7 SMS jobs** the channel wins at: reachability floor, no-app reach, time-critical transactional, renewal and expiry, mass ops reach, compliance-grade alert, and transactional cross-sell.
-- **A phone mockup** on every card with the sample message, plus a copy button that grabs the exact text with the prefix, opt-out, placeholder, and emoji intact.
-- **The full brief per card:** goal and roadblock, mechanics, the timing signal, a "Why SMS, not WhatsApp" call, the market compliance flags, and a "Set up in CleverTap" hint that names the right qualification type for that card's pattern.
-- **Market compliance flags** for APAC (Singapore, Malaysia, India, the Philippines and more): registered Sender ID, link and URL rules, template requirements, and free-message prefixes.
-- **Search, filter, and group** by vertical, SMS job, or message pattern.
-- **Two guides built in:** "How to use this gallery" and "Build it in CleverTap" (the five-step campaign flow, the provider prerequisite, personalisation tokens, and what you can layer on).
-- **Mobile-ready:** single-column layout, collapsible filters, and a full-screen card view on small screens.
+## The gallery network
+Part of a 12-gallery CleverTap channel suite (AMP Email, Rich Push, SMS & RCS, WhatsApp, Linked Content, Recommendations & Catalog, Geofence, Reminders, Promos, Native Display, Product Experiences, Custom HTML In-App). Every page links to the full set via the top switcher and footer.
 
-## Deploy
+## Files
+- `index.html` — the gallery (single self-contained file, no external assets beyond fonts).
+- `og-image.png` — social share preview (1200x630).
+- `robots.txt`, `sitemap.xml`, `llms.txt` — search and AI-engine discovery.
+- `README.md` — this file.
 
-This is a single self-contained `index.html`. There is no build step and no assets folder.
+## Deploy (GitHub Pages)
+1. Upload all files in this folder to the repository root, replacing `index.html`.
+2. Settings > Pages > Deploy from branch > `main` / root.
+3. The page goes live at the URL above; updates are a same-name re-upload.
 
-1. Create a public GitHub repository.
-2. Upload `index.html` and keep the name.
-3. In **Settings, then Pages**, set the source to **Deploy from a branch**, branch **main**, folder **/ (root)**, and save.
-4. The site goes live at `https://<username>.github.io/<repo>/` within about a minute.
-
-## Run it locally
-
-Open `index.html` in any modern browser. Everything is inline, so it works offline. Without a connection the fonts fall back to system fonts, and the copy button uses a local fallback when the page is opened straight from a file.
-
-## How it is built
-
-- One HTML file. The CSS and JavaScript are inline, and the card data lives in a small array in the page.
-- No images. Badges are emoji, the phone and cards are HTML and CSS, and the icons are inline SVG.
-- The favicon is embedded as a data URI. The web fonts load from Google Fonts.
-
-## A note on the compliance data
-
-The flags are a directional reference, not legal advice, and SMS regulations change. Confirm Sender ID registration, consent, and the current market rules before any send. SMS is orchestrated by CleverTap and delivered through your integrated provider, which owns final delivery, throughput, and cost.
-
-## Companion galleries
-
-- **Custom HTML In-App Template Gallery** — https://shijunneo-bot.github.io/ct-template-gallery/
-- **AMP Email Template Gallery** — https://shijunneo-bot.github.io/amp-email-gallery/
+## A note on accuracy
+This is a **directional reference**, not a guarantee. Verify sender-ID registration, consent, and carrier/RCS availability before any send. RCS renders only where the device and carrier support it and falls back to SMS elsewhere. RCS Business Messaging is not end-to-end encrypted, so keep OTPs and high-sensitivity content on an encrypted channel. Customer metrics are quoted from CleverTap's public case study library.

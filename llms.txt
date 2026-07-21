@@ -1,0 +1,46 @@
+# The SMS & RCS Field Guide
+
+> A pattern library of 75 SMS and 120 RCS campaign use cases across 15 APAC verticals, built on CleverTap. Each pattern gives the message, the trigger that makes it land, per-market compliance and RCS availability, and how to build it in CleverTap. It also includes a plain SMS vs WhatsApp vs RCS comparison. This is a directional reference, not a template dump; verify sender-ID registration, consent and carrier availability before any send.
+
+## What this is
+- 75 SMS patterns across 12 verticals, grouped by SMS job (reachability floor, no-app reach, transactional cross-sell, renewal/expiry, time-critical transactional, compliance-grade alert, mass ops reach) and message pattern (one-off, recurring, automated/triggered, automated/recurring, journey/omni).
+- 120 RCS patterns across 15 verticals (8 per vertical), grouped by RCS template type and job.
+- Colour marks the vertical; a badge marks the job or template; traffic-light flags mark delivery readiness.
+
+## SMS vs WhatsApp vs RCS
+- SMS: reaches any phone with no app and no internet; text plus a link only; ~160 characters; no branding. Best for reachability floor, OTP, time-critical alerts and no-app reach.
+- WhatsApp: reaches users with the app plus opt-in; rich media, buttons, lists and flows; needs Meta template approval and session pricing. Best for rich two-way in WhatsApp-heavy markets.
+- RCS: reaches the native inbox with no app where the device and carrier support it; cards, carousels, up to four buttons, a verified brand and read receipts; falls back to SMS when unavailable. Best for branded, richer-than-SMS reach with a safety net.
+
+## RCS template types (CleverTap, via Infobip)
+- Text: up to 1000 characters, formatting, up to 4 buttons.
+- Rich Card: media plus title (200 chars) plus description (2000 chars) plus up to 4 buttons; vertical 3:1 or 2:1, or horizontal 3:4.
+- Carousel: up to 10 swipeable Rich Cards; vertical 4:5 or 5:4, or horizontal 2:1 or 4:3.
+- Buttons: URL Redirect (static, dynamic, or CleverTap click-tracking), Dialer, Quick Reply. Max 4; rendering varies by device.
+- Sends like any CleverTap campaign: targeting, scheduling, personalisation and SMS fallback. India needs pre-approved templates (status within ~24h). RCS Business Messaging is not end-to-end encrypted, so keep OTPs and high-sensitivity content on an encrypted channel.
+
+## RCS availability across APAC (2026)
+- Live for business messaging: India, Indonesia, Singapore, Japan, South Korea (also UAE and Saudi Arabia).
+- Not yet or partial (default to WhatsApp or SMS): Philippines, Australia, New Zealand, Thailand, Vietnam, Malaysia (partial).
+- iPhone supports RCS from iOS 18 and RCS for Business from iOS 18.1, limited to supporting carriers. Re-check carrier status quarterly.
+
+## Real CleverTap reference
+- Bandhan AMC (India, Investment & Banking) used RCS rich cards, carousels and one-to-one MP4 video and reported an 8-10% conversion uplift, 16,000 personalised videos, and a 75% cost reduction versus legacy and WhatsApp messaging. Source: https://clevertap.com/wp-content/uploads/2025/09/Bandhan-AMC-Caselet.pdf
+
+## Companion galleries (12-gallery CleverTap channel suite)
+- AMP Email: https://shijunneo-bot.github.io/amp-email-gallery/
+- Rich Push: https://shijunneo-bot.github.io/rich-push-gallery/
+- SMS & RCS Field Guide (this gallery): https://shijunneo-bot.github.io/ct-sms-field-guide/
+- WhatsApp: https://shijunneo-bot.github.io/whatsapp-addon-gallery/
+- Linked Content: https://shijunneo-bot.github.io/ct-linked-content-gallery/
+- Recommendations & Catalog: https://shijunneo-bot.github.io/ct-recommendations-gallery/
+- Geofence: https://shijunneo-bot.github.io/ct-geofencing-gallery/
+- Reminders: https://shijunneo-bot.github.io/ct-reminders-gallery/
+- Promos: https://shijunneo-bot.github.io/ct-promos-gallery/
+- Native Display: https://shijunneo-bot.github.io/ct-native-display-gallery/
+- Product Experiences: https://shijunneo-bot.github.io/ct-product-experiences-gallery/
+- Custom HTML In-App: https://shijunneo-bot.github.io/ct-template-gallery/
+
+## Source
+- Live page: https://shijunneo-bot.github.io/ct-sms-field-guide/
+- CleverTap RCS docs: https://docs.clevertap.com/docs/rcs-messages

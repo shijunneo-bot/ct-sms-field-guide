@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://shijunneo-bot.github.io/ct-sms-field-guide/sitemap.xml
