@@ -3,7 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>The SMS Add-On Field Guide</title>
+<title>The SMS Field Guide - 75 SMS Campaign Patterns (CleverTap)</title>
+<meta name="description" content="75 SMS campaign patterns across 12 APAC verticals: the message, the timing trigger, per-market compliance flags, and how to build each one in CleverTap.">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#081936">
+<link rel="canonical" href="https://shijunneo-bot.github.io/ct-sms-field-guide/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="CleverTap Add-On Galleries">
+<meta property="og:title" content="The SMS Field Guide - 75 SMS Campaign Patterns">
+<meta property="og:description" content="75 SMS campaign patterns across 12 APAC verticals: the message, the timing trigger, per-market compliance flags, and how to build each one in CleverTap.">
+<meta property="og:url" content="https://shijunneo-bot.github.io/ct-sms-field-guide/">
+<meta property="og:image" content="https://shijunneo-bot.github.io/ct-sms-field-guide/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The SMS Field Guide - 75 SMS Campaign Patterns">
+<meta name="twitter:description" content="75 SMS campaign patterns across 12 APAC verticals: the message, the timing trigger, per-market compliance flags, and how to build each one in CleverTap.">
+<meta name="twitter:image" content="https://shijunneo-bot.github.io/ct-sms-field-guide/og-image.png">
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAw1BMVEUAAADZJSXZJSXaJCTZJSXZJSXYJibZJSXZJibaJSXXJSXZJSXXGxvZJCTaJSXZJCTfICDZJCTZJSXZJibZJSXZJSXZJSXYJCTWIyPZJibYJSXXJSXZJibaJSXhHh7ZJib////aKSn+9fX87+/dOjr++vr1x8fxsbHwqaniWFjbMTHaLS3539/zubnslJTqiYnmc3PjXV3dPz/65+f64+P3z8/0wsLuoaHtmprphITzvb3rjo7neXnneHjgUlLfSEjeRUWc+FVEAAAAH3RSTlMA7Cma8cj69uWNDc8Sk1ImDzX55tCciFcs0J1ZWDcRJhWn4gAAAUZJREFUOMt9k9eagjAQhYemAhbcVdetGbqAvbv9/Z9qv2Xoif43CcyBk0xOoMTq9zSp1ZK0Xt8CnoEisQJJGTTK1kRlNdSJVft8xDhGlZ+8dpiAzjCvy/dMSEemuvHIiKSpMI1UoNOT/bVfNhV6atCm+gnx2BS0/03GNF8iBlvWRAHoUgMiHxcJ41C78EIGAc5jJuABlHT89XHNFclDS8cLurFQoAEd0QwDJkSCVjoecSYW3GWCBYZXBIXF4ZoFLXKN/la8yGybnounWsFO8m0+0+SMTlQVhM6GGpW32pvj7puVHHCdtRqe6E3koLuKSXyexd7GJofiuNnGRXTD1edq4SBG+XFTYIht6CPhLO1KYMAwWcbPR7Dfzd8vXhE5PrR2Ug8tMbwRe0I2+bopQwVDbzfiqhtQZzpWK1FUpsDTLa//GxT8AUhnYjZaLuDLAAAAAElFTkSuQmCC">
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAw1BMVEUAAADZJSXZJSXaJCTZJSXZJSXYJibZJSXZJibaJSXXJSXZJSXXGxvZJCTaJSXZJCTfICDZJCTZJSXZJibZJSXZJSXZJSXYJCTWIyPZJibYJSXXJSXZJibaJSXhHh7ZJib////aKSn+9fX87+/dOjr++vr1x8fxsbHwqaniWFjbMTHaLS3539/zubnslJTqiYnmc3PjXV3dPz/65+f64+P3z8/0wsLuoaHtmprphITzvb3rjo7neXnneHjgUlLfSEjeRUWc+FVEAAAAH3RSTlMA7Cma8cj69uWNDc8Sk1ImDzX55tCciFcs0J1ZWDcRJhWn4gAAAUZJREFUOMt9k9eagjAQhYemAhbcVdetGbqAvbv9/Z9qv2Xoif43CcyBk0xOoMTq9zSp1ZK0Xt8CnoEisQJJGTTK1kRlNdSJVft8xDhGlZ+8dpiAzjCvy/dMSEemuvHIiKSpMI1UoNOT/bVfNhV6atCm+gnx2BS0/03GNF8iBlvWRAHoUgMiHxcJ41C78EIGAc5jJuABlHT89XHNFclDS8cLurFQoAEd0QwDJkSCVjoecSYW3GWCBYZXBIXF4ZoFLXKN/la8yGybnounWsFO8m0+0+SMTlQVhM6GGpW32pvj7puVHHCdtRqe6E3koLuKSXyexd7GJofiuNnGRXTD1edq4SBG+XFTYIht6CPhLO1KYMAwWcbPR7Dfzd8vXhE5PrR2Ug8tMbwRe0I2+bopQwVDbzfiqhtQZzpWK1FUpsDTLa//GxT8AUhnYjZaLuDLAAAAAElFTkSuQmCC">
 <link rel="apple-touch-icon" sizes="180x180" href="https://clevertap.com/wp-content/uploads/2023/08/apple-touch-icon-1.png">
@@ -13,7 +29,7 @@
 <style>
   :root{
     --bg:#081936;--bg2:#0b2148;--surface:#102a54;--surface2:#173a68;--line:#22406e;
-    --ink:#eaf1fb;--muted:#94a8c8;--faint:#5f759c;
+    --ink:#eaf1fb;--muted:#9db1d0;--faint:#8598be;
     --signal:#3a9dff;--ok:#4fd98a;--amber:#e6a53a;--block:#f0705a;--sky:#5ec8e6;
     --display:'Bricolage Grotesque',serif;--body:'Instrument Sans',sans-serif;--mono:'JetBrains Mono',monospace;
   }
@@ -209,13 +225,230 @@
     .mwrite{padding:18px}
     .phone-pane{padding:18px 16px}
   }
+
+  /* ---- a11y: skip link + focus visibility ---- */
+  .skip{position:fixed;left:12px;top:-70px;z-index:300;background:var(--signal);color:#06162e;font-family:var(--mono);font-size:13px;font-weight:600;padding:11px 15px;border-radius:9px;text-decoration:none;transition:top .18s}
+  .skip:focus{top:12px}
+  a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid #7ab8ff;outline-offset:2px}
+  html{scroll-behavior:smooth}
+  @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  /* ---- perf: skip offscreen card paint ---- */
+  .grid > .card{content-visibility:auto;contain-intrinsic-size:auto 178px}
+  /* ---- suite top bar ---- */
+  .suitebar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px 0 4px;flex-wrap:wrap;position:relative;z-index:6}
+  .suitebar .brand{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
+  .suitebar .brand b{color:var(--ink);font-weight:600}
+  .suite-switch{position:relative}
+  .suite-switch>summary{list-style:none;cursor:pointer;font-family:var(--mono);font-size:12px;color:var(--ink);background:rgba(16,42,84,.55);border:1px solid var(--line);padding:9px 13px;border-radius:10px;display:inline-flex;align-items:center;gap:9px;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+  .suite-switch>summary::-webkit-details-marker{display:none}
+  .suite-switch>summary .ch{color:var(--signal);transition:transform .2s;font-size:10px}
+  .suite-switch[open]>summary .ch{transform:rotate(180deg)}
+  .suite-menu{position:absolute;right:0;top:calc(100% + 8px);width:min(348px,88vw);background:#0c2148;border:1px solid var(--line);border-radius:14px;padding:8px;box-shadow:0 24px 60px -12px rgba(0,0,0,.7);z-index:60}
+  .suite-menu a{display:flex;gap:11px;align-items:flex-start;padding:10px 11px;border-radius:9px;text-decoration:none;color:var(--ink)}
+  .suite-menu a:hover{background:var(--surface)}
+  .suite-menu a[aria-current="page"]{background:rgba(58,157,255,.14);outline:1px solid rgba(58,157,255,.4)}
+  .suite-menu .dot{width:9px;height:9px;border-radius:50%;margin-top:5px;flex:none;background:var(--sc,#3a9dff)}
+  .suite-menu .nm{font-size:13.5px;font-weight:600;line-height:1.3}
+  .suite-menu .bl{display:block;font-size:11.5px;color:var(--muted);font-weight:400;margin-top:2px}
+  /* ---- footer suite grid ---- */
+  .suite-foot{margin-top:46px;border-top:1px solid var(--line);padding-top:28px}
+  .suite-foot h2{font-family:var(--display);font-size:21px;font-weight:700;margin-bottom:5px;letter-spacing:-.01em}
+  .suite-foot .lede{color:var(--muted);font-size:13.5px;margin-bottom:18px;max-width:640px}
+  .suite-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+  .suite-grid a{display:flex;gap:11px;align-items:flex-start;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(180deg,var(--surface),var(--bg2));text-decoration:none;color:var(--ink);transition:transform .14s,border-color .14s,box-shadow .14s}
+  .suite-grid a:hover{transform:translateY(-2px);border-color:var(--sc,#3a9dff);box-shadow:0 10px 26px rgba(0,0,0,.32)}
+  .suite-grid a[aria-current="page"]{border-color:var(--sc,#3a9dff);background:rgba(58,157,255,.12)}
+  .suite-grid .dot{width:10px;height:10px;border-radius:50%;margin-top:4px;flex:none;background:var(--sc,#3a9dff)}
+  .suite-grid .nm{font-size:14px;font-weight:600;line-height:1.25}
+  .suite-grid .nm .cur{font-family:var(--mono);font-size:9px;color:var(--signal);letter-spacing:.1em;margin-left:6px}
+  .suite-grid .bl{display:block;font-size:12px;color:var(--muted);font-weight:400;margin-top:3px;line-height:1.4}
+  @media(max-width:540px){.suite-foot h2{font-size:19px}}
 </style>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "https://shijunneo-bot.github.io/ct-sms-field-guide/#page",
+  "url": "https://shijunneo-bot.github.io/ct-sms-field-guide/",
+  "name": "The SMS Field Guide",
+  "description": "75 SMS campaign patterns across 12 APAC verticals: the message, the timing trigger, per-market compliance flags, and how to build each one in CleverTap.",
+  "inLanguage": "en",
+  "isPartOf": {
+   "@type": "WebSite",
+   "name": "CleverTap Add-On Galleries",
+   "url": "https://shijunneo-bot.github.io/"
+  },
+  "about": [
+   "SMS marketing",
+   "CleverTap",
+   "customer engagement",
+   "APAC",
+   "mobile messaging"
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "CleverTap Add-On Galleries",
+  "numberOfItems": 10,
+  "itemListElement": [
+   {
+    "@type": "ListItem",
+    "position": 1,
+    "url": "https://shijunneo-bot.github.io/rich-push-gallery/",
+    "name": "Rich Push",
+    "description": "Image, carousel, and interactive push notifications"
+   },
+   {
+    "@type": "ListItem",
+    "position": 2,
+    "url": "https://shijunneo-bot.github.io/ct-sms-field-guide/",
+    "name": "SMS Field Guide",
+    "description": "75 SMS campaign patterns across 12 APAC verticals"
+   },
+   {
+    "@type": "ListItem",
+    "position": 3,
+    "url": "https://shijunneo-bot.github.io/whatsapp-addon-gallery/",
+    "name": "WhatsApp",
+    "description": "WhatsApp template patterns and use cases"
+   },
+   {
+    "@type": "ListItem",
+    "position": 4,
+    "url": "https://shijunneo-bot.github.io/amp-email-gallery/",
+    "name": "AMP Email",
+    "description": "Interactive AMP email templates"
+   },
+   {
+    "@type": "ListItem",
+    "position": 5,
+    "url": "https://shijunneo-bot.github.io/ct-template-gallery/",
+    "name": "Custom HTML In-App",
+    "description": "Custom HTML in-app message templates"
+   },
+   {
+    "@type": "ListItem",
+    "position": 6,
+    "url": "https://shijunneo-bot.github.io/ct-linked-content-gallery/",
+    "name": "Linked Content",
+    "description": "Live, personalised data inside messages"
+   },
+   {
+    "@type": "ListItem",
+    "position": 7,
+    "url": "https://shijunneo-bot.github.io/ct-recommendations-gallery/",
+    "name": "Recommendations & Catalog",
+    "description": "Product recommendation and catalog plays"
+   },
+   {
+    "@type": "ListItem",
+    "position": 8,
+    "url": "https://shijunneo-bot.github.io/ct-promos-gallery/",
+    "name": "Promos",
+    "description": "Promo code, coupon, and wallet plays"
+   },
+   {
+    "@type": "ListItem",
+    "position": 9,
+    "url": "https://shijunneo-bot.github.io/ct-reminders-gallery/",
+    "name": "Reminders",
+    "description": "Reminder and re-engagement campaigns"
+   },
+   {
+    "@type": "ListItem",
+    "position": 10,
+    "url": "https://shijunneo-bot.github.io/ct-geofencing-gallery/",
+    "name": "Geofence",
+    "description": "Location and geofence-triggered messaging"
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "When should I use SMS instead of WhatsApp or push?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Lead with WhatsApp or push where they already reach the user well. Use SMS for the moments only it wins: reachability when the app is not installed, speed for time-critical alerts, and no-app reach. Each card notes why SMS fits that job."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How do I build an SMS campaign in CleverTap?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Match the card's pattern to the setup: a one-off from a past-behaviour segment or custom list, an automated campaign from a live event trigger, a recurring campaign on a schedule, or an omni journey with SMS as a step. Connect an SMS provider first, then personalise with profile fields and shorten links where the market allows."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What do the colours and flags mean?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Colour marks the vertical, the badge marks the SMS job, and the traffic-light flags show delivery readiness: green sends as written, amber needs a registered Sender ID or a local rule, and red needs a market-specific variant such as a link-free version."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "How many SMS patterns does the guide cover?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "It covers 75 SMS patterns across 12 APAC verticals and 7 SMS jobs, each with a sample message, the timing trigger, and per-market compliance notes."
+    }
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+   {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "CleverTap Add-On Galleries",
+    "item": "https://shijunneo-bot.github.io/"
+   },
+   {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "SMS Field Guide",
+    "item": "https://shijunneo-bot.github.io/ct-sms-field-guide/"
+   }
+  ]
+ }
+]
+</script>
 </head>
 <body>
+<a href="#main" class="skip">Skip to content</a>
 <canvas id="grad" aria-hidden="true"></canvas>
 <div id="grad-scrim" aria-hidden="true"></div>
 <div id="grad-grain" aria-hidden="true"></div>
 <div class="wrap">
+  <nav class="suitebar" aria-label="Gallery suite">
+    <span class="brand">CleverTap <b>Add-On Galleries</b></span>
+    <details class="suite-switch">
+      <summary aria-haspopup="menu">Browse all 10 galleries <span class="ch" aria-hidden="true">▾</span></summary>
+      <div class="suite-menu" role="menu">
+        <a href="https://shijunneo-bot.github.io/rich-push-gallery/" style="--sc:#e6a53a" role="menuitem"><span class="dot"></span><span><span class="nm">Rich Push</span><span class="bl">Image, carousel, and interactive push</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-sms-field-guide/" style="--sc:#3a9dff" aria-current="page" role="menuitem"><span class="dot"></span><span><span class="nm">SMS Field Guide</span><span class="bl">75 SMS patterns across 12 APAC verticals</span></span></a>
+        <a href="https://shijunneo-bot.github.io/whatsapp-addon-gallery/" style="--sc:#4fd98a" role="menuitem"><span class="dot"></span><span><span class="nm">WhatsApp</span><span class="bl">WhatsApp template patterns and use cases</span></span></a>
+        <a href="https://shijunneo-bot.github.io/amp-email-gallery/" style="--sc:#a78bfa" role="menuitem"><span class="dot"></span><span><span class="nm">AMP Email</span><span class="bl">Interactive AMP email templates</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-template-gallery/" style="--sc:#f0857a" role="menuitem"><span class="dot"></span><span><span class="nm">Custom HTML In-App</span><span class="bl">Custom HTML in-app message templates</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-linked-content-gallery/" style="--sc:#5ec8e6" role="menuitem"><span class="dot"></span><span><span class="nm">Linked Content</span><span class="bl">Live, personalised data inside messages</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-recommendations-gallery/" style="--sc:#f0b73a" role="menuitem"><span class="dot"></span><span><span class="nm">Recommendations & Catalog</span><span class="bl">Product recommendation and catalog plays</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-promos-gallery/" style="--sc:#f08fb4" role="menuitem"><span class="dot"></span><span><span class="nm">Promos</span><span class="bl">Promo code, coupon, and wallet plays</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-reminders-gallery/" style="--sc:#b0e035" role="menuitem"><span class="dot"></span><span><span class="nm">Reminders</span><span class="bl">Reminder and re-engagement campaigns</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-geofencing-gallery/" style="--sc:#5aa9f0" role="menuitem"><span class="dot"></span><span><span class="nm">Geofence</span><span class="bl">Location and geofence-triggered messaging</span></span></a>
+      </div>
+    </details>
+  </nav>
+  <main id="main">
   <header>
     <div class="kicker">CleverTap · SMS Add-On · Pattern Library</div>
     <h1>The SMS <span class="thin">Field Guide</span></h1>
@@ -288,7 +521,7 @@
     <div class="searchrow">
       <label class="search">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
-        <input id="q" type="text" placeholder="Search a brand, trigger, or word in the copy…">
+        <input id="q" type="text" aria-label="Search patterns by brand, trigger, or copy" placeholder="Search a brand, trigger, or word in the copy…">
         <button class="clearq" id="clearq" style="display:none">clear ✕</button>
       </label>
       <button class="opts-btn" id="optsBtn" aria-expanded="false">
@@ -297,15 +530,15 @@
     </div>
     <div class="panel" id="panel">
       <div class="ctlrow">
-        <div class="fg"><span class="fl">Group by</span><div class="pills" id="group">
-          <span class="chip on" data-grp="none">Flat</span>
-          <span class="chip" data-grp="vert">Vertical</span>
-          <span class="chip" data-grp="job">Job</span></div></div>
+        <div class="fg"><span class="fl">Group by</span><div class="pills" id="group" role="group" aria-label="Group results by">
+          <button type="button" class="chip on" data-grp="none" aria-pressed="true">Flat</button>
+          <button type="button" class="chip" data-grp="vert" aria-pressed="false">Vertical</button>
+          <button type="button" class="chip" data-grp="job" aria-pressed="false">Job</button></div></div>
       </div>
       <div class="filtrow">
-        <div class="fg" style="flex:1"><span class="fl">Vertical &nbsp;·&nbsp; the colour code</span><div class="pills" id="vpills"></div></div>
-        <div class="fg"><span class="fl">SMS job</span><div class="pills" id="jpills"></div></div>
-        <div class="fg"><span class="fl">Pattern</span><div class="pills" id="ppills"></div></div>
+        <div class="fg" style="flex:1"><span class="fl">Vertical &nbsp;·&nbsp; the colour code</span><div class="pills" id="vpills" role="group" aria-label="Filter by vertical"></div></div>
+        <div class="fg"><span class="fl">SMS job</span><div class="pills" id="jpills" role="group" aria-label="Filter by SMS job"></div></div>
+        <div class="fg"><span class="fl">Pattern</span><div class="pills" id="ppills" role="group" aria-label="Filter by pattern"></div></div>
       </div>
     </div>
     <div class="count" id="count"></div>
@@ -316,6 +549,25 @@
   <button id="toFilters" class="tofilters" type="button" aria-label="Back to search and filters">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M7 12h10M10 18h4"/></svg>Filters
   </button>
+
+  </main>
+
+  <nav class="suite-foot" aria-label="All galleries">
+    <h2>Explore the full suite</h2>
+    <p class="lede">Nine more pattern libraries for CleverTap add-on channels, same format: the message, the trigger that makes it land, and how to build it.</p>
+    <div class="suite-grid">
+      <a href="https://shijunneo-bot.github.io/rich-push-gallery/" style="--sc:#e6a53a"><span class="dot"></span><span><span class="nm">Rich Push</span><span class="bl">Image, carousel, and interactive push</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-sms-field-guide/" style="--sc:#3a9dff" aria-current="page"><span class="dot"></span><span><span class="nm">SMS Field Guide <span class="cur">YOU ARE HERE</span></span><span class="bl">75 SMS patterns across 12 APAC verticals</span></span></a>
+      <a href="https://shijunneo-bot.github.io/whatsapp-addon-gallery/" style="--sc:#4fd98a"><span class="dot"></span><span><span class="nm">WhatsApp</span><span class="bl">WhatsApp template patterns and use cases</span></span></a>
+      <a href="https://shijunneo-bot.github.io/amp-email-gallery/" style="--sc:#a78bfa"><span class="dot"></span><span><span class="nm">AMP Email</span><span class="bl">Interactive AMP email templates</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-template-gallery/" style="--sc:#f0857a"><span class="dot"></span><span><span class="nm">Custom HTML In-App</span><span class="bl">Custom HTML in-app message templates</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-linked-content-gallery/" style="--sc:#5ec8e6"><span class="dot"></span><span><span class="nm">Linked Content</span><span class="bl">Live, personalised data inside messages</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-recommendations-gallery/" style="--sc:#f0b73a"><span class="dot"></span><span><span class="nm">Recommendations & Catalog</span><span class="bl">Product recommendation and catalog plays</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-promos-gallery/" style="--sc:#f08fb4"><span class="dot"></span><span><span class="nm">Promos</span><span class="bl">Promo code, coupon, and wallet plays</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-reminders-gallery/" style="--sc:#b0e035"><span class="dot"></span><span><span class="nm">Reminders</span><span class="bl">Reminder and re-engagement campaigns</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-geofencing-gallery/" style="--sc:#5aa9f0"><span class="dot"></span><span><span class="nm">Geofence</span><span class="bl">Location and geofence-triggered messaging</span></span></a>
+    </div>
+  </nav>
 
   <footer>
     Compliance flags source: SGNIC/IMDA (SG SSIR), MCMC (MY A2P URL ban, Sep 2024), TRAI DLT (India), Kominfo (Indonesia), BSP/AFASA (PH OTP shift, Jun 2026), PAGCOR (PH gaming), CleverTap docs.<br>
@@ -343,17 +595,20 @@ let F={job:"All",vert:"All",pat:"All"},Q="";
 // vertical pills (colour legend + filter)
 const vpills=document.getElementById("vpills");
 ["All",...verts].forEach(v=>{
-  const el=document.createElement("span");
+  const el=document.createElement("button");
+  el.type="button";
   el.className="vp"+(F.vert===v?" on":"");
+  el.setAttribute("aria-pressed",F.vert===v?"true":"false");
   if(v!=="All"){el.style.setProperty("--vc",VC[v]);el.innerHTML=`<span class="sw"></span>${v}`;}
-  else el.textContent="All";
+  else{el.textContent="All";el.setAttribute("aria-label","All verticals");}
   el.onclick=()=>{F.vert=v;render();};
   vpills.appendChild(el);
 });
 function chipRow(elId,arr,key){
   const el=document.getElementById(elId);
   ["All",...arr].forEach(v=>{
-    const c=document.createElement("span");c.className="chip"+(F[key]===v?" on":"");c.textContent=v;
+    const c=document.createElement("button");c.type="button";c.className="chip"+(F[key]===v?" on":"");c.setAttribute("aria-pressed",F[key]===v?"true":"false");c.textContent=v;
+    if(v==="All")c.setAttribute("aria-label",key==="job"?"All SMS jobs":"All patterns");
     c.onclick=()=>{F[key]=v;render();};el.appendChild(c);
   });
 }
@@ -372,7 +627,8 @@ optsBtn.onclick=()=>{const open=panel.classList.toggle("open");optsBtn.classList
 const toF=document.getElementById("toFilters");
 addEventListener("scroll",()=>{toF.classList.toggle("show",scrollY>520);},{passive:true});
 toF.onclick=()=>{
-  document.querySelector(".toolbar").scrollIntoView({behavior:"smooth",block:"start"});
+  var RM=matchMedia("(prefers-reduced-motion: reduce)").matches;
+  document.querySelector(".toolbar").scrollIntoView({behavior:RM?"auto":"smooth",block:"start"});
   const ob=document.getElementById("optsBtn"),pn=document.getElementById("panel");
   if(getComputedStyle(ob).display!=="none" && !pn.classList.contains("open")) ob.click();
 };
@@ -383,7 +639,7 @@ const VERT_ORDER=["E-Commerce","Food & Beverage","On-Demand","Travel & Ticketing
 const JOB_ORDER=["Time-critical transactional","Renewal / expiry","Reachability floor","No-app reach","Transactional cross-sell","Compliance-grade alert","Mass ops reach"];
 let GROUP="none";
 document.querySelectorAll("#group .chip").forEach(c=>{
-  c.onclick=()=>{document.querySelectorAll("#group .chip").forEach(x=>x.classList.remove("on"));c.classList.add("on");GROUP=c.dataset.grp;render();};
+  c.onclick=()=>{document.querySelectorAll("#group .chip").forEach(x=>{x.classList.remove("on");x.setAttribute("aria-pressed","false");});c.classList.add("on");c.setAttribute("aria-pressed","true");GROUP=c.dataset.grp;render();};
 });
 function sectionHead(name,n,vc){return `<div class="section" style="--vc:${vc}"><span class="sdot"></span><h2>${name}</h2><span class="scount">${n} play${n>1?"s":""}</span></div>`;}
 
@@ -412,9 +668,9 @@ function compact(d){
     </div></button>`;
 }
 function render(){
-  document.querySelectorAll(".vp").forEach(el=>el.classList.toggle("on",el.textContent.replace(/^\s+/,"")===F.vert||(el.textContent==="All"&&F.vert==="All")));
-  document.querySelectorAll("#jpills .chip").forEach(el=>el.classList.toggle("on",el.textContent===F.job));
-  document.querySelectorAll("#ppills .chip").forEach(el=>el.classList.toggle("on",el.textContent===F.pat));
+  document.querySelectorAll(".vp").forEach(el=>{const on=(el.textContent.replace(/^\s+/,"")===F.vert)||(el.textContent==="All"&&F.vert==="All");el.classList.toggle("on",on);el.setAttribute("aria-pressed",on?"true":"false");});
+  document.querySelectorAll("#jpills .chip").forEach(el=>{const on=el.textContent===F.job;el.classList.toggle("on",on);el.setAttribute("aria-pressed",on?"true":"false");});
+  document.querySelectorAll("#ppills .chip").forEach(el=>{const on=el.textContent===F.pat;el.classList.toggle("on",on);el.setAttribute("aria-pressed",on?"true":"false");});
   const list=DATA.filter(matches);
   const g=document.getElementById("grid");
   if(!list.length){
@@ -504,6 +760,11 @@ function closeModal(){overlay.classList.remove("open");document.body.style.overf
 document.getElementById("mx").onclick=closeModal;
 overlay.onclick=e=>{if(e.target===overlay)closeModal();};
 document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
+var suiteSw=document.querySelector(".suite-switch");
+if(suiteSw){
+  document.addEventListener("click",function(e){ if(suiteSw.open && !suiteSw.contains(e.target)) suiteSw.open=false; });
+  document.addEventListener("keydown",function(e){ if(e.key==="Escape") suiteSw.open=false; });
+}
 
 render();
 
