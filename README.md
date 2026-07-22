@@ -9,11 +9,12 @@ A public pattern library for CleverTap messaging: **75 SMS** and **120 RCS** cam
 - **SMS vs WhatsApp vs RCS comparison** so you can pick the right channel in a call.
 - **RCS feature guide** covering the three CleverTap template types (Text, Rich Card, Carousel), the three button types, limits and common misreads.
 - **RCS availability across APAC (2026)** with an honest live vs not-yet market split and an SMS-fallback flag on every card.
+- **Notify SMS (transactional track).** A comparison of promotional versus transactional sending: routing, sender identity, template registration, throttling, quiet hours, unsubscribe, consent basis, authentication, pricing, latency and reporting. Includes a classification decision flow, an APAC regulatory table across eleven markets, illustrative configuration and payload, misuse boundaries and a Q&A. Notify SMS specifics are marked pending confirmation, with an open-questions list.
 - **Real CleverTap case studies** cited per vertical (Bandhan AMC anchors the RCS story with an 8-10% conversion uplift and 75% cost cut).
 - **Filter and search:** by vertical, template type, job and pattern, grouped flat, by vertical, or by template. Click any card for the full brief and a mockup.
 
 ## The gallery network
-Part of a 12-gallery CleverTap channel suite (AMP Email, Rich Push, SMS & RCS, WhatsApp, Linked Content, Recommendations & Catalog, Geofence, Reminders, Promos, Native Display, Product Experiences, Custom HTML In-App). Every page links to the full set via the top switcher and footer.
+Part of a 17-gallery CleverTap channel suite (AMP Email, Rich Push, SMS & RCS, WhatsApp, Custom HTML In-App, Linked Content, Recommendations, Geofencing, Reminders, Promos, Native Display, Product Experiences, App & Web Inbox, Bulletins, Webhooks, Enterprise Trust, Intelligence & Activation). Every page links to the full set via the top switcher and footer.
 
 ## Files
 - `index.html` — the gallery (single self-contained file, no external assets beyond fonts).

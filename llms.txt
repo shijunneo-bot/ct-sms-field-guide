@@ -1,6 +1,6 @@
 # The SMS & RCS Field Guide
 
-> A pattern library of 75 SMS and 120 RCS campaign use cases across 15 APAC verticals, built on CleverTap. Each pattern gives the message, the trigger that makes it land, per-market compliance and RCS availability, and how to build it in CleverTap. It also includes a plain SMS vs WhatsApp vs RCS comparison. This is a directional reference, not a template dump; verify sender-ID registration, consent and carrier availability before any send.
+> A pattern library of 75 SMS and 120 RCS campaign use cases across 15 APAC verticals, built on CleverTap, plus a Notify SMS transactional track covering the promotional versus transactional split. Each pattern gives the message, the trigger that makes it land, per-market compliance and RCS availability, and how to build it in CleverTap. It also includes a plain SMS vs WhatsApp vs RCS comparison. This is a directional reference, not a template dump; verify sender-ID registration, consent and carrier availability before any send.
 
 ## What this is
 - 75 SMS patterns across 12 verticals, grouped by SMS job (reachability floor, no-app reach, transactional cross-sell, renewal/expiry, time-critical transactional, compliance-grade alert, mass ops reach) and message pattern (one-off, recurring, automated/triggered, automated/recurring, journey/omni).
@@ -27,19 +27,35 @@
 ## Real CleverTap reference
 - Bandhan AMC (India, Investment & Banking) used RCS rich cards, carousels and one-to-one MP4 video and reported an 8-10% conversion uplift, 16,000 personalised videos, and a 75% cost reduction versus legacy and WhatsApp messaging. Source: https://clevertap.com/wp-content/uploads/2025/09/Bandhan-AMC-Caselet.pdf
 
-## Companion galleries (12-gallery CleverTap channel suite)
-- AMP Email: https://shijunneo-bot.github.io/amp-email-gallery/
-- Rich Push: https://shijunneo-bot.github.io/rich-push-gallery/
-- SMS & RCS Field Guide (this gallery): https://shijunneo-bot.github.io/ct-sms-field-guide/
-- WhatsApp: https://shijunneo-bot.github.io/whatsapp-addon-gallery/
-- Linked Content: https://shijunneo-bot.github.io/ct-linked-content-gallery/
-- Recommendations & Catalog: https://shijunneo-bot.github.io/ct-recommendations-gallery/
-- Geofence: https://shijunneo-bot.github.io/ct-geofencing-gallery/
-- Reminders: https://shijunneo-bot.github.io/ct-reminders-gallery/
-- Promos: https://shijunneo-bot.github.io/ct-promos-gallery/
-- Native Display: https://shijunneo-bot.github.io/ct-native-display-gallery/
-- Product Experiences: https://shijunneo-bot.github.io/ct-product-experiences-gallery/
-- Custom HTML In-App: https://shijunneo-bot.github.io/ct-template-gallery/
+## Notify SMS (transactional track)
+- Notify SMS is presented as a comparison rather than a use case gallery, because transactional SMS differs mechanically and legally rather than visually.
+- Status: Notify SMS does not appear in CleverTap's public documentation at the time of writing. Every CleverTap-specific fact in that section is marked "not stated in the documentation" and listed as an open question, rather than inferred.
+- What is documented today: transactional sending is configured through the provider-level SMS Type setting, with the values transactional, transactional_opt_in and promotional. Using more than one type requires a separate provider configuration for each. Routes differ at the provider (for MSG91, route=1 is promotional and route=4 is transactional).
+- Classification test: a message is transactional when the user's own action or obligation caused it, it would still need sending if they had never opted into marketing, and it contains no offer, upsell, discount or cross-sell. Any promotional line reclassifies the whole message as promotional.
+- India: TRAI requires entity, sender ID and template registration on the DLT portal for both promotional and transactional senders. URLs in marketing SMS must be pre-approved on DLT.
+- Singapore: marketing messages need a DNC Registry check no more than 30 days before sending; transactional messages such as order confirmations, appointment reminders and account notifications generally sit outside the DNC obligation. Sender IDs must be registered with the SMS Sender ID Registry.
+- Vietnam: Decree 91/2020 requires prior express consent for advertising, a national DoNotCall list, per-day limits, a permitted sending window and an advertising label. A pre-registered transaction route exists for notification and OTP traffic.
+- South Korea: marketing messages carry an advertising label and unsubscribe details, consent is reconfirmed every two years, and alphanumeric sender IDs are not supported.
+- Misuse boundary: a transactional route is not a way around consent, quiet hours, or opt-out, and it is not a cheaper promotional channel.
+
+## Companion galleries (17-gallery CleverTap channel suite)
+- 01 AMP Email: https://shijunneo-bot.github.io/amp-email-gallery/
+- 02 Rich Push: https://shijunneo-bot.github.io/rich-push-gallery/
+- 03 SMS & RCS Field Guide (this gallery): https://shijunneo-bot.github.io/ct-sms-field-guide/
+- 04 WhatsApp: https://shijunneo-bot.github.io/whatsapp-addon-gallery/
+- 05 Custom HTML In-App: https://shijunneo-bot.github.io/ct-template-gallery/
+- 06 Linked Content: https://shijunneo-bot.github.io/ct-linked-content-gallery/
+- 07 Recommendations: https://shijunneo-bot.github.io/ct-recommendations-gallery/
+- 08 Geofencing: https://shijunneo-bot.github.io/ct-geofencing-gallery/
+- 09 Reminders: https://shijunneo-bot.github.io/ct-reminders-gallery/
+- 10 Promos: https://shijunneo-bot.github.io/ct-promos-gallery/
+- 11 Native Display: https://shijunneo-bot.github.io/ct-native-display-gallery/
+- 12 Product Experiences: https://shijunneo-bot.github.io/ct-product-experiences-gallery/
+- 13 App & Web Inbox: https://shijunneo-bot.github.io/ct-inbox-gallery/
+- 14 Bulletins: https://shijunneo-bot.github.io/ct-bulletins-gallery/
+- 15 Webhooks: https://shijunneo-bot.github.io/ct-webhooks-gallery/
+- 16 Enterprise Trust: https://shijunneo-bot.github.io/ct-trust-gallery/
+- 17 Intelligence & Activation: https://shijunneo-bot.github.io/ct-intelligence-gallery/
 
 ## Source
 - Live page: https://shijunneo-bot.github.io/ct-sms-field-guide/

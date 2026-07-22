@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>The SMS &amp; RCS Field Guide - CleverTap Messaging Patterns</title>
-<meta name="description" content="75 SMS and 120 RCS campaign patterns across 15 APAC verticals: the message, the trigger that makes it land, per-market compliance and RCS availability, and how to build each one in CleverTap. Includes an SMS vs WhatsApp vs RCS comparison.">
+<meta name="description" content="75 SMS and 120 RCS campaign patterns across 15 APAC verticals, plus a Notify SMS transactional track covering the promotional versus transactional split, APAC regulatory rules and DLT registration. Includes an SMS vs WhatsApp vs RCS comparison.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="theme-color" content="#081936">
 <meta name="color-scheme" content="dark light">
@@ -15,14 +15,14 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="CleverTap Add-On Galleries">
 <meta property="og:title" content="The SMS &amp; RCS Field Guide - CleverTap Messaging Patterns">
-<meta property="og:description" content="75 SMS and 120 RCS campaign patterns across 15 APAC verticals: the message, the trigger that makes it land, per-market compliance and RCS availability, and how to build each one in CleverTap. Includes an SMS vs WhatsApp vs RCS comparison.">
+<meta property="og:description" content="75 SMS and 120 RCS campaign patterns across 15 APAC verticals, plus a Notify SMS transactional track covering the promotional versus transactional split, APAC regulatory rules and DLT registration. Includes an SMS vs WhatsApp vs RCS comparison.">
 <meta property="og:url" content="https://shijunneo-bot.github.io/ct-sms-field-guide/">
 <meta property="og:image" content="https://shijunneo-bot.github.io/ct-sms-field-guide/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="The SMS &amp; RCS Field Guide - CleverTap Messaging Patterns">
-<meta name="twitter:description" content="75 SMS and 120 RCS campaign patterns across 15 APAC verticals: the message, the trigger that makes it land, per-market compliance and RCS availability, and how to build each one in CleverTap. Includes an SMS vs WhatsApp vs RCS comparison.">
+<meta name="twitter:description" content="75 SMS and 120 RCS campaign patterns across 15 APAC verticals, plus a Notify SMS transactional track covering the promotional versus transactional split, APAC regulatory rules and DLT registration. Includes an SMS vs WhatsApp vs RCS comparison.">
 <meta name="twitter:image" content="https://shijunneo-bot.github.io/ct-sms-field-guide/og-image.png">
 <link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAw1BMVEUAAADZJSXZJSXaJCTZJSXZJSXYJibZJSXZJibaJSXXJSXZJSXXGxvZJCTaJSXZJCTfICDZJCTZJSXZJibZJSXZJSXZJSXYJCTWIyPZJibYJSXXJSXZJibaJSXhHh7ZJib////aKSn+9fX87+/dOjr++vr1x8fxsbHwqaniWFjbMTHaLS3539/zubnslJTqiYnmc3PjXV3dPz/65+f64+P3z8/0wsLuoaHtmprphITzvb3rjo7neXnneHjgUlLfSEjeRUWc+FVEAAAAH3RSTlMA7Cma8cj69uWNDc8Sk1ImDzX55tCciFcs0J1ZWDcRJhWn4gAAAUZJREFUOMt9k9eagjAQhYemAhbcVdetGbqAvbv9/Z9qv2Xoif43CcyBk0xOoMTq9zSp1ZK0Xt8CnoEisQJJGTTK1kRlNdSJVft8xDhGlZ+8dpiAzjCvy/dMSEemuvHIiKSpMI1UoNOT/bVfNhV6atCm+gnx2BS0/03GNF8iBlvWRAHoUgMiHxcJ41C78EIGAc5jJuABlHT89XHNFclDS8cLurFQoAEd0QwDJkSCVjoecSYW3GWCBYZXBIXF4ZoFLXKN/la8yGybnounWsFO8m0+0+SMTlQVhM6GGpW32pvj7puVHHCdtRqe6E3koLuKSXyexd7GJofiuNnGRXTD1edq4SBG+XFTYIht6CPhLO1KYMAwWcbPR7Dfzd8vXhE5PrR2Ug8tMbwRe0I2+bopQwVDbzfiqhtQZzpWK1FUpsDTLa//GxT8AUhnYjZaLuDLAAAAAElFTkSuQmCC">
 <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAw1BMVEUAAADZJSXZJSXaJCTZJSXZJSXYJibZJSXZJibaJSXXJSXZJSXXGxvZJCTaJSXZJCTfICDZJCTZJSXZJibZJSXZJSXZJSXYJCTWIyPZJibYJSXXJSXZJibaJSXhHh7ZJib////aKSn+9fX87+/dOjr++vr1x8fxsbHwqaniWFjbMTHaLS3539/zubnslJTqiYnmc3PjXV3dPz/65+f64+P3z8/0wsLuoaHtmprphITzvb3rjo7neXnneHjgUlLfSEjeRUWc+FVEAAAAH3RSTlMA7Cma8cj69uWNDc8Sk1ImDzX55tCciFcs0J1ZWDcRJhWn4gAAAUZJREFUOMt9k9eagjAQhYemAhbcVdetGbqAvbv9/Z9qv2Xoif43CcyBk0xOoMTq9zSp1ZK0Xt8CnoEisQJJGTTK1kRlNdSJVft8xDhGlZ+8dpiAzjCvy/dMSEemuvHIiKSpMI1UoNOT/bVfNhV6atCm+gnx2BS0/03GNF8iBlvWRAHoUgMiHxcJ41C78EIGAc5jJuABlHT89XHNFclDS8cLurFQoAEd0QwDJkSCVjoecSYW3GWCBYZXBIXF4ZoFLXKN/la8yGybnounWsFO8m0+0+SMTlQVhM6GGpW32pvj7puVHHCdtRqe6E3koLuKSXyexd7GJofiuNnGRXTD1edq4SBG+XFTYIht6CPhLO1KYMAwWcbPR7Dfzd8vXhE5PrR2Ug8tMbwRe0I2+bopQwVDbzfiqhtQZzpWK1FUpsDTLa//GxT8AUhnYjZaLuDLAAAAAElFTkSuQmCC">
@@ -361,6 +361,55 @@
   html[data-theme="light"] .theme-toggle .ic-sun{display:none}
   html[data-theme="light"] .theme-toggle .ic-moon{display:block}
   .sb-right{display:flex;align-items:center;gap:10px}
+
+  /* ===== Notify SMS section ===== */
+  :root{--warn:#f0857a}
+  html[data-theme="light"]{--warn:#b23c2e}
+  .grid > *{min-width:0}
+  #notify[hidden]{display:none}
+  .nbanner{border:1px solid var(--amber);border-left:3px solid var(--amber);background:rgba(230,165,58,.07);border-radius:14px;padding:15px 18px;margin:0 0 26px}
+  .nbanner .nb-k{font-family:var(--mono);font-size:9.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin-bottom:4px}
+  .nbanner .nb-t{font-family:var(--display);font-size:17px;font-weight:700;color:var(--ink);margin-bottom:7px}
+  .stamp{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;padding:2px 7px;border-radius:5px;border:1px solid;margin-left:6px;vertical-align:middle;white-space:nowrap}
+  .st-inc{color:var(--ok);border-color:rgba(79,217,138,.5);background:rgba(79,217,138,.10)}
+  .st-req{color:var(--amber);border-color:rgba(230,165,58,.5);background:rgba(230,165,58,.10)}
+  .st-addon{color:var(--sky);border-color:rgba(94,200,230,.5);background:rgba(94,200,230,.10)}
+  .st-beta{color:#b493ff;border-color:rgba(180,147,255,.5);background:rgba(180,147,255,.10)}
+  .tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:10px;max-width:100%}
+  .ntbl{min-width:660px}
+  .ntbl td.na{color:var(--muted);font-style:italic}
+  .ntbl td:first-child{white-space:normal}
+  .mono{font-family:var(--mono);font-size:11.5px;color:var(--sky)}
+  .flow-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:4px 0 10px}
+  .flow{display:block;width:100%;min-width:520px;height:auto}
+  .flow text{fill:var(--ink);font-family:var(--body)}
+  .flow .t-ink{fill:var(--ink)} .flow .t-muted{fill:var(--muted)} .flow .t-faint{fill:var(--faint)}
+  .flow .t-ok{fill:var(--ok)} .flow .t-amber{fill:var(--amber)} .flow .t-warn{fill:var(--warn)}
+  html[data-theme="light"] .flow .t-ok{fill:#0f7a45}
+  html[data-theme="light"] .flow .t-amber{fill:#8a5a06}
+  html[data-theme="light"] .st-inc{color:#0f7a45}
+  html[data-theme="light"] .st-req{color:#8a5a06}
+  html[data-theme="light"] .st-addon{color:#0d5c73}
+  html[data-theme="light"] .st-beta{color:#5b3bb5}
+  html[data-theme="light"] .nbanner .nb-k{color:#8a5a06}
+  /* pre-existing light-mode readability fix for vertical chips */
+  html[data-theme="light"] .tvert{color:color-mix(in srgb,var(--vc) 42%,#0b1c38)}
+  .code-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border:1px solid var(--line);border-radius:10px;background:rgba(8,20,42,.6);margin:4px 0}
+  html[data-theme="light"] .code-wrap{background:#f2f6fc}
+  .code{font-family:var(--mono);font-size:11.5px;line-height:1.65;color:var(--ink);padding:13px 15px;margin:0;white-space:pre}
+  .code .c{color:var(--faint)}
+  .lim-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:11px}
+  #notify .tt-card h2{font-family:var(--display);font-size:15.5px;margin-bottom:6px;color:var(--ink)}
+  .lim{border:1px solid var(--line);border-left:2px solid var(--warn);border-radius:11px;padding:12px 14px;background:rgba(240,133,122,.05)}
+  .lim h2{font-family:var(--display);font-size:14.5px;color:var(--ink);margin-bottom:5px}
+  .lim p{font-size:12.5px;color:var(--muted);line-height:1.55}
+  .oq{margin:0;padding-left:20px}
+  .oq li{font-size:13px;color:var(--ink);line-height:1.6;margin-bottom:7px}
+  .qa{border-bottom:1px solid var(--line);padding:11px 0}
+  .qa:last-child{border-bottom:none;padding-bottom:0}
+  .qa h2{font-family:var(--display);font-size:15px;color:var(--ink);margin-bottom:5px}
+  .qa p{font-size:13px;color:var(--muted);line-height:1.6}
+  @media(max-width:600px){.ntbl{min-width:600px}.lim-grid{grid-template-columns:1fr}}
 </style>
 <script type="application/ld+json">
 [
@@ -370,7 +419,7 @@
   "@id": "https://shijunneo-bot.github.io/ct-sms-field-guide/#page",
   "url": "https://shijunneo-bot.github.io/ct-sms-field-guide/",
   "name": "The SMS & RCS Field Guide",
-  "description": "75 SMS and 120 RCS campaign patterns across 15 APAC verticals: the message, the trigger that makes it land, per-market compliance and RCS availability, and how to build each one in CleverTap. Includes an SMS vs WhatsApp vs RCS comparison.",
+  "description": "75 SMS and 120 RCS campaign patterns across 15 APAC verticals, plus a Notify SMS transactional track covering the promotional versus transactional split, APAC regulatory rules and DLT registration. Includes an SMS vs WhatsApp vs RCS comparison.",
   "inLanguage": "en",
   "isPartOf": {
    "@type": "WebSite",
@@ -389,7 +438,7 @@
   "@context": "https://schema.org",
   "@type": "ItemList",
   "name": "CleverTap Add-On Galleries",
-  "numberOfItems": 12,
+  "numberOfItems": 17,
   "itemListElement": [
    {
     "@type": "ListItem",
@@ -474,6 +523,41 @@
     "url": "https://shijunneo-bot.github.io/ct-product-experiences-gallery/",
     "name": "Product Experiences",
     "description": "In-product nudges, tooltips, and walkthroughs"
+   },
+   {
+    "@type": "ListItem",
+    "position": 13,
+    "url": "https://shijunneo-bot.github.io/ct-inbox-gallery/",
+    "name": "App & Web Inbox",
+    "description": "Persistent inbox messages on app and web"
+   },
+   {
+    "@type": "ListItem",
+    "position": 14,
+    "url": "https://shijunneo-bot.github.io/ct-bulletins-gallery/",
+    "name": "Bulletins",
+    "description": "Broadcast bulletins and announcements"
+   },
+   {
+    "@type": "ListItem",
+    "position": 15,
+    "url": "https://shijunneo-bot.github.io/ct-webhooks-gallery/",
+    "name": "Webhooks",
+    "description": "Outbound webhooks and system triggers"
+   },
+   {
+    "@type": "ListItem",
+    "position": 16,
+    "url": "https://shijunneo-bot.github.io/ct-trust-gallery/",
+    "name": "Enterprise Trust",
+    "description": "Security, privacy, and compliance posture"
+   },
+   {
+    "@type": "ListItem",
+    "position": 17,
+    "url": "https://shijunneo-bot.github.io/ct-intelligence-gallery/",
+    "name": "Intelligence & Activation",
+    "description": "AI, analytics, and activation plays"
    }
   ]
  },
@@ -481,6 +565,22 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is the difference between transactional and promotional SMS?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A transactional message is caused by the user's own action or obligation, would still need sending if they had never opted into marketing, and contains no offer, upsell, discount or cross-sell. Adding any promotional line reclassifies the whole message as promotional, which changes the route, the consent basis and the registry checks that apply."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Is CleverTap Notify SMS a paid add-on?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Not stated in CleverTap's public documentation at the time of writing. Transactional sending is supported today through the SMS Type provider setting, with values transactional and transactional_opt_in. Commercial status, plan tier and routing for Notify SMS are pending confirmation from the product team."
+    }
+   },
    {
     "@type": "Question",
     "name": "What is the difference between SMS, WhatsApp and RCS?",
@@ -573,7 +673,7 @@
     <div class="sb-right">
       <button id="themeToggle" class="theme-toggle" type="button" aria-label="Switch to day theme" aria-pressed="false" title="Toggle day and night"><svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
     <details class="suite-switch">
-      <summary aria-haspopup="menu">Browse all 12 galleries <span class="ch" aria-hidden="true">▾</span></summary>
+      <summary aria-haspopup="menu">Browse all 17 galleries <span class="ch" aria-hidden="true">▾</span></summary>
       <div class="suite-menu" role="menu">
         <a href="https://shijunneo-bot.github.io/rich-push-gallery/" style="--sc:#e6a53a" role="menuitem"><span class="dot"></span><span><span class="nm">Rich Push</span><span class="bl">Image, carousel, and interactive push</span></span></a>
         <a href="https://shijunneo-bot.github.io/ct-sms-field-guide/" style="--sc:#3a9dff" aria-current="page" role="menuitem"><span class="dot"></span><span><span class="nm">SMS &amp; RCS Field Guide</span><span class="bl">75 SMS + 120 RCS patterns, 15 verticals</span></span></a>
@@ -587,6 +687,11 @@
         <a href="https://shijunneo-bot.github.io/ct-geofencing-gallery/" style="--sc:#5aa9f0" role="menuitem"><span class="dot"></span><span><span class="nm">Geofence</span><span class="bl">Location and geofence-triggered messaging</span></span></a>
         <a href="https://shijunneo-bot.github.io/ct-native-display-gallery/" style="--sc:#7c9cf0" role="menuitem"><span class="dot"></span><span><span class="nm">Native Display</span><span class="bl">Native ad-style display in feeds and lists</span></span></a>
         <a href="https://shijunneo-bot.github.io/ct-product-experiences-gallery/" style="--sc:#5fd3b0" role="menuitem"><span class="dot"></span><span><span class="nm">Product Experiences</span><span class="bl">In-product nudges, tooltips, and walkthroughs</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-inbox-gallery/" style="--sc:#6cc6f5" role="menuitem"><span class="dot"></span><span><span class="nm">App &amp; Web Inbox</span><span class="bl">Persistent inbox messages on app and web</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-bulletins-gallery/" style="--sc:#f6c453" role="menuitem"><span class="dot"></span><span><span class="nm">Bulletins</span><span class="bl">Broadcast bulletins and announcements</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-webhooks-gallery/" style="--sc:#9aa8ff" role="menuitem"><span class="dot"></span><span><span class="nm">Webhooks</span><span class="bl">Outbound webhooks and system triggers</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-trust-gallery/" style="--sc:#7ee0a8" role="menuitem"><span class="dot"></span><span><span class="nm">Enterprise Trust</span><span class="bl">Security, privacy, and compliance posture</span></span></a>
+        <a href="https://shijunneo-bot.github.io/ct-intelligence-gallery/" style="--sc:#e694f5" role="menuitem"><span class="dot"></span><span><span class="nm">Intelligence &amp; Activation</span><span class="bl">AI, analytics, and activation plays</span></span></a>
       </div>
     </details>
     </div>
@@ -595,6 +700,7 @@
   <div class="chan-tabs" role="tablist" aria-label="Channel">
     <button id="tab-sms" class="chan-tab on" role="tab" aria-selected="true" type="button">SMS</button>
     <button id="tab-rcs" class="chan-tab" role="tab" aria-selected="false" type="button">RCS</button>
+    <button id="tab-notify" class="chan-tab" role="tab" aria-selected="false" type="button">Notify SMS</button>
   </div>
   <div id="view-sms">
   <header>
@@ -776,6 +882,199 @@
   <div class="grid" id="rcsgrid"></div>
 
   </div>
+  <div id="notify" hidden>
+    <header>
+      <div class="kicker">CleverTap &middot; Notify SMS &middot; Transactional Track</div>
+      <h1>Notify <span class="thin">SMS</span></h1>
+      <p class="sub">Transactional SMS is a different product from the promotional SMS in the rest of this guide. The differences are mechanical and regulatory rather than visual, so this section is a comparison, not a use case gallery.</p>
+    </header>
+
+    <div class="nbanner" role="note">
+      <div class="nb-k">Status</div>
+      <div class="nb-t">Pending product confirmation</div>
+      <p class="rcs-note">At the time of writing, Notify SMS does not appear in CleverTap's public documentation. We checked the full published documentation index, the SMS documentation set, the product pages and the launch announcements. Every CleverTap-specific fact below is therefore marked <b>not stated in the documentation</b> rather than filled in. The regulatory, mechanical and decision-flow material is researched independently and stands on its own. Open questions are listed at the end of this section.</p>
+    </div>
+
+    <details class="howto" open>
+      <summary><span class="ht-k">Compare</span><span class="ht-title">Promotional SMS versus Notify SMS</span><span class="ht-toggle">&#9662;</span></summary>
+      <div class="ht-body">
+        <p class="rcs-note" style="margin-bottom:12px">The middle column carries what CleverTap documents today for transactional sending, so the table stays useful while the Notify specifics are pending. Nothing in the right column is inferred from the middle one.</p>
+        <div class="tbl-scroll">
+        <table class="cmp ntbl">
+          <tr><th>What differs</th><th>Promotional SMS</th><th>Transactional SMS today <span class="stamp st-inc">documented</span></th><th>Notify SMS <span class="stamp st-req">pending</span></th></tr>
+          <tr><td>Routing</td><td>Promotional route at the provider. With MSG91, for example, the documented value is route=1.</td><td>Transactional route at the provider. With MSG91 the documented value is route=4.</td><td class="na">Not stated in the documentation. Whether Notify SMS uses a separate route or gateway is unconfirmed.</td></tr>
+          <tr><td>Sender identity</td><td>Numeric or alphanumeric header registered for promotional use, per market rules.</td><td>Sender ID registered against the transactional category, set per provider configuration.</td><td class="na">Not stated in the documentation. Whether a separate sender ID pool applies is unconfirmed.</td></tr>
+          <tr><td>Template registration</td><td>Required in registered markets. In India, templates are registered on the DLT portal.</td><td>Required in registered markets, registered under the transactional category with an Entity ID and Template ID.</td><td class="na">Not stated in the documentation. Any separate pre-registration step is unconfirmed.</td></tr>
+          <tr><td>SMS Type setting</td><td>CleverTap provider setting <span class="mono">promotional</span>.</td><td>CleverTap provider settings <span class="mono">transactional</span> and <span class="mono">transactional_opt_in</span>. Using more than one type needs a separate provider configuration for each.</td><td class="na">Not stated in the documentation.</td></tr>
+          <tr><td>Throttling and frequency capping</td><td>Subject to the campaign and account level controls you configure.</td><td>Governed by the same campaign controls. CleverTap does not publish a documented bypass.</td><td class="na">Not stated in the documentation. Any bypass of capping is unconfirmed and should not be assumed.</td></tr>
+          <tr><td>Quiet hours and DND</td><td>Do Not Disturb is set per campaign under When, then Delivery preferences, and applies in each user's own timezone by default.</td><td>The same DND control is available. Whether you switch it off is a compliance decision, not a product default.</td><td class="na">Not stated in the documentation.</td></tr>
+          <tr><td>Unsubscribe handling</td><td>Opt-out honoured. The Subscribe API sets subscribe or unsubscribe status for a phone number.</td><td>Service messages are commonly excluded from marketing opt-out, but only where they carry no marketing content.</td><td class="na">Not stated in the documentation.</td></tr>
+          <tr><td>Consent basis</td><td>Prior consent for marketing, plus a registry check where the market requires one.</td><td>The existing relationship or the user's own request, where local law recognises it.</td><td class="na">Not stated in the documentation.</td></tr>
+          <tr><td>Authentication</td><td>Standard campaign or API credentials for the account.</td><td>The same credentials. Type is set by provider configuration rather than a separate key.</td><td class="na">Not stated in the documentation. Any separate API, key, role or permission is unconfirmed.</td></tr>
+          <tr><td>Pricing</td><td>Per message at the promotional rate, which varies by market and provider.</td><td>Per message at the transactional rate, billed by your SMS provider rather than bundled by CleverTap.</td><td class="na">Not stated in the documentation. Commercial status, plan tier and whether it is self-serve are unconfirmed.</td></tr>
+          <tr><td>Latency and delivery priority</td><td>Provider dependent. Promotional traffic is more often queued or scrubbed.</td><td>Provider dependent. Transactional routes are generally treated as higher priority by carriers.</td><td class="na">Not stated in the documentation.</td></tr>
+          <tr><td>Reporting</td><td>Sent, delivered, clicks and errors, with delivery rate available when callbacks are configured.</td><td>The same SMS stats surface. Clicks need callback data from the provider.</td><td class="na">Not stated in the documentation.</td></tr>
+        </table>
+        </div>
+        <p class="rcs-note"><b>How to read this:</b> the middle column is what you can act on today. The right column is what we ask the product team to confirm before anything is promised to a customer.</p>
+      </div>
+    </details>
+
+    <details class="howto build">
+      <summary><span class="ht-k">Decide</span><span class="ht-title">Is this message transactional or promotional?</span><span class="ht-toggle">&#9662;</span></summary>
+      <div class="ht-body">
+        <p class="rcs-note" style="margin-bottom:10px">Classification follows the content and the trigger, not the channel or the intent behind the campaign. Work down the questions in order.</p>
+        <div class="flow-wrap">
+        <svg class="flow" viewBox="0 0 720 560" role="img" aria-label="Decision flow for classifying a message as transactional or promotional">
+          <title>Transactional or promotional decision flow</title>
+          <defs>
+            <marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+              <path d="M0 0 L10 5 L0 10 z" fill="var(--faint)"/>
+            </marker>
+          </defs>
+          <g font-family="var(--body)" font-size="13">
+            <rect x="250" y="8" width="220" height="44" rx="10" fill="var(--surface2)" stroke="var(--line)"/>
+            <text x="360" y="35" text-anchor="middle" class="t-ink" font-size="13.5">A message to send</text>
+            <path d="M360 52 L360 84" stroke="var(--faint)" stroke-width="1.5" marker-end="url(#ar)"/>
+
+            <rect x="176" y="86" width="368" height="62" rx="10" fill="var(--surface)" stroke="var(--signal)"/>
+            <text x="360" y="110" text-anchor="middle" class="t-ink">1. Did this user's own action or obligation</text>
+            <text x="360" y="130" text-anchor="middle" class="t-ink">cause the message?</text>
+            <path d="M360 148 L360 180" stroke="var(--faint)" stroke-width="1.5" marker-end="url(#ar)"/>
+            <path d="M176 117 L92 117 L92 430" stroke="var(--faint)" stroke-width="1.5" marker-end="url(#ar)"/>
+            <text x="132" y="110" text-anchor="middle" class="t-amber" font-size="11.5">no</text>
+            <text x="376" y="170" class="t-ok" font-size="11.5">yes</text>
+
+            <rect x="176" y="182" width="368" height="62" rx="10" fill="var(--surface)" stroke="var(--signal)"/>
+            <text x="360" y="206" text-anchor="middle" class="t-ink">2. Would you still need to send it if they</text>
+            <text x="360" y="226" text-anchor="middle" class="t-ink">had never opted into marketing?</text>
+            <path d="M360 244 L360 276" stroke="var(--faint)" stroke-width="1.5" marker-end="url(#ar)"/>
+            <path d="M176 213 L128 213 L128 430" stroke="var(--faint)" stroke-width="1.5" marker-end="url(#ar)"/>
+            <text x="152" y="206" text-anchor="middle" class="t-amber" font-size="11.5">no</text>
+            <text x="376" y="266" class="t-ok" font-size="11.5">yes</text>
+
+            <rect x="176" y="278" width="368" height="62" rx="10" fill="var(--surface)" stroke="var(--signal)"/>
+            <text x="360" y="302" text-anchor="middle" class="t-ink">3. Does any part of it offer, upsell,</text>
+            <text x="360" y="322" text-anchor="middle" class="t-ink">discount or cross-sell?</text>
+            <path d="M544 309 L600 309 L600 430" stroke="var(--faint)" stroke-width="1.5" marker-end="url(#ar)"/>
+            <text x="572" y="302" text-anchor="middle" class="t-amber" font-size="11.5">yes</text>
+            <path d="M360 340 L360 430" stroke="var(--faint)" stroke-width="1.5" marker-end="url(#ar)"/>
+            <text x="376" y="392" class="t-ok" font-size="11.5">no</text>
+
+            <rect x="248" y="432" width="224" height="60" rx="10" fill="rgba(79,217,138,.10)" stroke="var(--ok)"/>
+            <text x="360" y="456" text-anchor="middle" class="t-ok" font-size="12.5" font-weight="600">Transactional route</text>
+            <text x="360" y="476" text-anchor="middle" class="t-muted" font-size="11.5">Service content only</text>
+
+            <rect x="30" y="432" width="196" height="60" rx="10" fill="rgba(230,165,58,.10)" stroke="var(--amber)"/>
+            <text x="128" y="456" text-anchor="middle" class="t-amber" font-size="12.5" font-weight="600">Promotional route</text>
+            <text x="128" y="476" text-anchor="middle" class="t-muted" font-size="11.5">Consent plus registry check</text>
+
+            <rect x="494" y="432" width="196" height="60" rx="10" fill="rgba(230,165,58,.10)" stroke="var(--amber)"/>
+            <text x="592" y="456" text-anchor="middle" class="t-amber" font-size="12.5" font-weight="600">Promotional route</text>
+            <text x="592" y="476" text-anchor="middle" class="t-muted" font-size="11.5">One offer makes it all promotional</text>
+
+            <rect x="30" y="506" width="660" height="44" rx="10" fill="rgba(240,133,122,.10)" stroke="var(--warn)"/>
+            <text x="360" y="533" text-anchor="middle" class="t-warn" font-size="12">Sending promotional content on a transactional route is misclassification, and it carries penalty risk.</text>
+          </g>
+        </svg>
+        </div>
+        <p class="rcs-note"><b>The trap sits at question 3.</b> A delivery update with a discount code stapled to the end is a promotional message in most of these markets. Mixing the two does not make a promotional message transactional. It makes the whole message promotional, and it sends it on a route that was not registered for it.</p>
+      </div>
+    </details>
+
+    <details class="howto">
+      <summary><span class="ht-k">Comply</span><span class="ht-title">How APAC draws the line</span><span class="ht-toggle">&#9662;</span></summary>
+      <div class="ht-body">
+        <p class="rcs-note" style="margin-bottom:12px">Transactional messages often sit outside consent and quiet-hour restrictions, but only where they genuinely qualify. The registration regime, where one exists, is named below.</p>
+        <div class="tbl-scroll">
+        <table class="cmp ntbl">
+          <tr><th>Market</th><th>Framework</th><th>How the line is drawn</th></tr>
+          <tr><td>India</td><td>TRAI, DLT registration <span class="stamp st-req">registry</span></td><td>Entities, sender IDs and templates are registered on the DLT portal. Both promotional and transactional senders must register. Promotional traffic is scrubbed against preference registers. URLs in marketing SMS must be pre-approved and whitelisted on DLT.</td></tr>
+          <tr><td>Singapore</td><td>PDPA, DNC Registry, Spam Control Act <span class="stamp st-req">registry</span></td><td>Marketing messages need a DNC check no more than 30 days before sending. Transactional messages such as order confirmations, appointment reminders and account notifications carry no marketing content and are generally exempt. Sender IDs must be registered with the SMS Sender ID Registry, and unregistered IDs are relabelled as likely scam.</td></tr>
+          <tr><td>Indonesia</td><td>Personal Data Protection Law (UU PDP No. 27 of 2022)</td><td>Consent-based for marketing. Service messages tied to an existing agreement are treated separately. Sender ID registration is handled through the local operator or aggregator.</td></tr>
+          <tr><td>Malaysia</td><td>PDPA 2010, MCMC oversight</td><td>Consent-based for direct marketing with an opt-out on request. Service and account messages sit outside the marketing definition.</td></tr>
+          <tr><td>Thailand</td><td>PDPA B.E. 2562</td><td>Consent-based for marketing, with a lawful basis such as contract performance available for service messages.</td></tr>
+          <tr><td>Vietnam</td><td>Decree 91/2020 <span class="stamp st-req">registry</span></td><td>Prior express consent for advertising messages, with a national DoNotCall list, per-day volume limits, a permitted sending window and a required advertising label. Sender IDs, content and URLs need registration. A pre-registered transaction route is offered for notification and OTP traffic.</td></tr>
+          <tr><td>Philippines</td><td>Data Privacy Act 2012, SIM Registration Act (RA 11934)</td><td>Consent-based for marketing. SIM registration is mandatory, and commercial messaging rules on embedded links have tightened, so check current NTC guidance before sending links.</td></tr>
+          <tr><td>South Korea</td><td>PIPA and the Network Act <span class="stamp st-req">labelling</span></td><td>Marketing messages carry an advertising label in the header and unsubscribe details in the footer. Consent must be reconfirmed with recipients every two years. Alphanumeric sender IDs are not supported and are replaced with a long number.</td></tr>
+          <tr><td>Japan</td><td>Act on Regulation of Transmission of Specified Electronic Mail, APPI</td><td>Opt-in for advertising, with sender identification and an opt-out path. Service notices tied to a transaction are treated separately.</td></tr>
+          <tr><td>Taiwan</td><td>Personal Data Protection Act</td><td>Marketing must offer a free opt-out, and it must be honoured on first request. Service messages fall outside that duty.</td></tr>
+          <tr><td>Australia and New Zealand</td><td>Spam Act 2003, Unsolicited Electronic Messages Act 2007</td><td>Consent, sender identification and a working unsubscribe are required for commercial messages. Purely factual service messages have a narrower obligation, though sender identification still applies.</td></tr>
+        </table>
+        </div>
+        <p class="rcs-note"><b>Working rule for APAC:</b> the safest test is content, not intent. If a compliance officer would read one line of the message as marketing, treat the whole message as promotional and route it accordingly. This page is a working reference rather than legal advice, so confirm current rules with your counsel and your provider before a launch.</p>
+      </div>
+    </details>
+
+    <details class="howto build">
+      <summary><span class="ht-k">Configure</span><span class="ht-title">Setup and payload</span><span class="ht-toggle">&#9662;</span></summary>
+      <div class="ht-body">
+        <p class="rcs-note" style="margin-bottom:10px">All sample values below are <b>illustrative</b>. They are shaped like the real fields, and they are not live credentials or working templates.</p>
+        <div class="tt-grid">
+          <div class="tt-card"><h2>1. Register in market</h2><div class="spec">client side</div><p>Register the entity, sender ID and message templates under the transactional category with the operator or registry that applies, such as DLT in India.</p></div>
+          <div class="tt-card"><h2>2. Add the provider</h2><div class="spec">Settings &gt; Engage &gt; Channels &gt; SMS</div><p>Add the provider and set SMS Type to the transactional value. A separate provider configuration is needed for each SMS Type in use.</p></div>
+          <div class="tt-card"><h2>3. Map the identifiers</h2><div class="spec">provider setup</div><p>Enter the Entity ID and Template ID fields where the market requires them, plus the sender ID registered for transactional traffic.</p></div>
+          <div class="tt-card"><h2>4. Test and callback</h2><div class="spec">Send Test SMS</div><p>Send a test message, then configure the delivery report callback URL so delivery and click data returns to CleverTap.</p></div>
+        </div>
+        <p class="rcs-note" style="margin-top:12px"><b>Illustrative payload shape</b> for a transactional send through a generic provider configuration. Field names follow whatever your provider specifies.</p>
+        <div class="code-wrap"><pre class="code"><code>POST https://api.example-provider.com/v1/sms   <span class="c"># illustrative</span>
+{
+  "sender_id":   "ACMEBK",            <span class="c"># illustrative, registered for transactional</span>
+  "route":       "transactional",     <span class="c"># promotional traffic uses a different route</span>
+  "entity_id":   "1101XXXXXXXXXXXXXX",<span class="c"># illustrative DLT Entity ID, India</span>
+  "template_id": "1107XXXXXXXXXXXXXX",<span class="c"># illustrative DLT Template ID</span>
+  "to":          "+65XXXXXXXX",
+  "body":        "Your order 4821 is out for delivery.",
+  "callback":    "&lt;CleverTap delivery report callback URL&gt;"
+}</code></pre></div>
+        <p class="rcs-note"><b>Notify SMS payload:</b> not stated in the documentation. Whether Notify SMS introduces its own endpoint, its own key or extra fields is unconfirmed, so the shape above reflects transactional sending as documented today.</p>
+      </div>
+    </details>
+
+    <details class="howto">
+      <summary><span class="ht-k">Limits</span><span class="ht-title">What it is not, and where it gets abused</span><span class="ht-toggle">&#9662;</span></summary>
+      <div class="ht-body">
+        <div class="lim-grid">
+          <div class="lim"><h2>It is not a way around consent</h2><p>A transactional route carries service content. It does not turn a marketing message into a permitted one, and it does not extend your consent basis.</p></div>
+          <div class="lim"><h2>It is not a quiet-hours bypass</h2><p>Some markets allow service messages outside normal windows. That allowance follows the content and the local rule, not the route you picked in a dashboard.</p></div>
+          <div class="lim"><h2>It is not a cheaper promotional channel</h2><p>Sending offers on a transactional route to reduce cost or improve delivery is misclassification. It puts the sender ID, the template registration and the account at risk.</p></div>
+          <div class="lim"><h2>It is not a reason to drop opt-out</h2><p>Where a service message sits outside marketing opt-out, that is a narrow exemption. A message that mixes in an offer loses it.</p></div>
+          <div class="lim"><h2>One offer contaminates the message</h2><p>A single promotional line in an otherwise factual alert is usually enough to reclassify the whole message in these markets.</p></div>
+          <div class="lim"><h2>Registration is per template</h2><p>Editing approved copy can invalidate the registration. Content changes go back through the registry before they go out.</p></div>
+        </div>
+      </div>
+    </details>
+
+    <details class="howto" open>
+      <summary><span class="ht-k">Open</span><span class="ht-title">Questions for the product team</span><span class="ht-toggle">&#9662;</span></summary>
+      <div class="ht-body">
+        <p class="rcs-note" style="margin-bottom:10px">These are the gaps that stop this section from being complete. Each one is unconfirmed rather than assumed.</p>
+        <ol class="oq">
+          <li>Commercial status: is Notify SMS a paid add-on, and which plan tier does it sit on?</li>
+          <li>Is it self-serve, or does enabling it require a request through the account team?</li>
+          <li>Does it use a separate route, gateway or sender ID pool, or the existing provider configuration?</li>
+          <li>Is there a separate API, key, role or permission for authorising a transactional send?</li>
+          <li>Is there a template pre-registration step inside CleverTap, beyond the market registry?</li>
+          <li>Does it interact with throttling, frequency capping, DND or unsubscribe suppression in any documented way?</li>
+          <li>Pricing model: per message, bundled, or a separate pool from promotional volume?</li>
+          <li>Dashboard path, screen names and whether it appears as a separate campaign type.</li>
+          <li>Which markets it is available in, and any market-specific prerequisites.</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="howto">
+      <summary><span class="ht-k">Q&amp;A</span><span class="ht-title">Common questions</span><span class="ht-toggle">&#9662;</span></summary>
+      <div class="ht-body">
+        <div class="qa"><h2>Can we send an OTP and a promotion in the same message?</h2><p>Treat that as promotional. The offer sets the classification, so it needs the promotional route, the consent basis and the registry check that go with it.</p></div>
+        <div class="qa"><h2>Does transactional mean we can ignore Do Not Disturb?</h2><p>Not by default. DND is a campaign setting in CleverTap, and switching it off is a compliance decision that depends on the market and on the message genuinely being a service message.</p></div>
+        <div class="qa"><h2>Do we still need DLT registration for transactional SMS in India?</h2><p>Yes. Both promotional and transactional senders register on the DLT portal, with the entity, sender ID and templates recorded there.</p></div>
+        <div class="qa"><h2>Is a delivery update exempt from Singapore's DNC Registry?</h2><p>A delivery update with no marketing content is generally treated as transactional and sits outside the DNC obligation. Add an offer and the exemption no longer applies.</p></div>
+        <div class="qa"><h2>What can we tell a customer about Notify SMS today?</h2><p>That transactional sending is supported through SMS Type configuration today, and that Notify SMS specifics are pending confirmation. Nothing about tier, pricing or a separate route should be promised until the product team confirms it.</p></div>
+        <div class="qa"><h2>Why is there no use case gallery here?</h2><p>Transactional SMS has little visual variety and a great deal of mechanical and regulatory difference. The comparison, the decision flow and the market rules carry more value than a set of near-identical cards.</p></div>
+      </div>
+    </details>
+  </div>
   </main>
 
   <nav class="suite-foot" aria-label="All galleries">
@@ -794,6 +1093,11 @@
       <a href="https://shijunneo-bot.github.io/ct-geofencing-gallery/" style="--sc:#5aa9f0"><span class="dot"></span><span><span class="nm">Geofence</span><span class="bl">Location and geofence-triggered messaging</span></span></a>
       <a href="https://shijunneo-bot.github.io/ct-native-display-gallery/" style="--sc:#7c9cf0"><span class="dot"></span><span><span class="nm">Native Display</span><span class="bl">Native ad-style display in feeds and lists</span></span></a>
       <a href="https://shijunneo-bot.github.io/ct-product-experiences-gallery/" style="--sc:#5fd3b0"><span class="dot"></span><span><span class="nm">Product Experiences</span><span class="bl">In-product nudges, tooltips, and walkthroughs</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-inbox-gallery/" style="--sc:#6cc6f5"><span class="dot"></span><span><span class="nm">App &amp; Web Inbox</span><span class="bl">Persistent inbox messages on app and web</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-bulletins-gallery/" style="--sc:#f6c453"><span class="dot"></span><span><span class="nm">Bulletins</span><span class="bl">Broadcast bulletins and announcements</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-webhooks-gallery/" style="--sc:#9aa8ff"><span class="dot"></span><span><span class="nm">Webhooks</span><span class="bl">Outbound webhooks and system triggers</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-trust-gallery/" style="--sc:#7ee0a8"><span class="dot"></span><span><span class="nm">Enterprise Trust</span><span class="bl">Security, privacy, and compliance posture</span></span></a>
+      <a href="https://shijunneo-bot.github.io/ct-intelligence-gallery/" style="--sc:#e694f5"><span class="dot"></span><span><span class="nm">Intelligence &amp; Activation</span><span class="bl">AI, analytics, and activation plays</span></span></a>
     </div>
   </nav>
 
@@ -1185,9 +1489,19 @@ document.querySelectorAll("#rgroup .chip").forEach(c=>{c.onclick=()=>{document.q
 rmakePills();renderR();
 
 // channel tab switch
-const tabSms=document.getElementById("tab-sms"),tabRcs=document.getElementById("tab-rcs"),vSms=document.getElementById("view-sms"),vRcs=document.getElementById("view-rcs");
-function setChan(rcs){tabRcs.classList.toggle("on",rcs);tabSms.classList.toggle("on",!rcs);tabRcs.setAttribute("aria-selected",rcs);tabSms.setAttribute("aria-selected",!rcs);vRcs.hidden=!rcs;vSms.hidden=rcs;window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});}
-tabSms.onclick=()=>setChan(false);tabRcs.onclick=()=>setChan(true);
+const CHANS=[["tab-sms","view-sms"],["tab-rcs","view-rcs"],["tab-notify","notify"]];
+function setChan(key){
+  CHANS.forEach(function(pair){
+    var btn=document.getElementById(pair[0]), view=document.getElementById(pair[1]);
+    if(!btn||!view) return;
+    var on=(pair[0]==="tab-"+key)||(pair[1]===key);
+    btn.classList.toggle("on",on); btn.setAttribute("aria-selected",on?"true":"false"); view.hidden=!on;
+  });
+  window.scrollTo({top:0,behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth"});
+}
+document.getElementById("tab-sms").onclick=function(){setChan("sms");};
+document.getElementById("tab-rcs").onclick=function(){setChan("rcs");};
+document.getElementById("tab-notify").onclick=function(){setChan("notify");};
 
 /* ================= Day / Night controller ================= */
 (function(){
